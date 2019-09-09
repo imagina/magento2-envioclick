@@ -1,6 +1,6 @@
 <?php
 
-namespace Imagina\Customshipping\Model\Carrier;
+namespace Imagina\Envioclick\Model\Carrier;
 
 use Magento\Quote\Model\Quote\Address\RateRequest;
 use Magento\Shipping\Model\Carrier\AbstractCarrier;
