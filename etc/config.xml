@@ -4,8 +4,8 @@
         <carriers>
             <envioclick>
                 <active>0</active>
-                <title>Custom Shipping Title</title>
-                <name>Custom Shipping Method Name</name>
+                <title>Envio Click</title>
+                <name>Envio Click</name>
                 <shipping_cost>10</shipping_cost>
                 <sallowspecific>0</sallowspecific>
                 <sort_order>15</sort_order>

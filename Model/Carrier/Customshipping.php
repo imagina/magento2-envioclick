@@ -14,7 +14,7 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
     /**
      * @var string
      */
-    protected $_code = 'customshipping';
+    protected $_code = 'envioclick';
 
     /**
      * @var bool
@@ -83,6 +83,8 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
         $method->setCost($shippingCost);
 
         $result->append($method);
+
+        //print_r("hola" . "\n");exit();
 
         return $result;
     }
