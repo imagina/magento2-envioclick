@@ -5,8 +5,8 @@
             <envioclick>
                 <active>0</active>
                 <title>Envio Click</title>
-                <name>Envio Click</name>
-                <shipping_cost>10</shipping_cost>
+                <apiKey>null</apiKey>
+                <showErrorsFrontend>0</showErrorsFrontend>
                 <sallowspecific>0</sallowspecific>
                 <sort_order>15</sort_order>
                 <model>Imagina\Envioclick\Model\Carrier\Customshipping</model>
