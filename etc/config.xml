@@ -6,6 +6,12 @@
                 <active>0</active>
                 <title>Envio Click</title>
                 <apiKey>null</apiKey>
+                <productWeight>weightTotalProduct</productWeight>
+                <weightTotalDefault>1</weightTotalDefault>
+                <productDimensions>dimensionsTotalProduct</productDimensions>
+                <widthTotalDefault>1</widthTotalDefault>
+                <heightTotalDefault>1</heightTotalDefault>
+                <lengthTotalDefault>1</lengthTotalDefault>
                 <showErrorsFrontend>0</showErrorsFrontend>
                 <sallowspecific>0</sallowspecific>
                 <sort_order>15</sort_order>

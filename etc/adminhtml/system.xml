@@ -19,9 +19,35 @@
                     <label>Origin Code</label>
                     <comment>Zip code del Origen</comment>
                 </field>
-                 <field id="originAddresse" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="originAddresse" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Origin Address</label>
                     <comment>Direccion del Origen</comment>
+                </field>
+                <field id="productWeight" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Total Weight</label>
+                    <comment>Peso Total que será utilizado para el calculo del Envio</comment>
+                    <source_model>Imagina\Envioclick\Model\Config\ProductWeight</source_model>
+                </field>
+                <field id="weightTotalDefault" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Weight Total Default</label>
+                    <comment>Peso total por defecto</comment>
+                </field>
+                <field id="productDimensions" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Total Dimensions</label>
+                    <comment>Medidas Totales que serán utilizadas para el calculo del Envio</comment>
+                    <source_model>Imagina\Envioclick\Model\Config\ProductDimensions</source_model>
+                </field>
+                <field id="widthTotalDefault" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Width Total Default</label>
+                    <comment>Ancho total por defecto</comment>
+                </field>
+                <field id="heightTotalDefault" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Height Total Default</label>
+                    <comment>Alto total por defecto</comment>
+                </field>
+                 <field id="lengthTotalDefault" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Length Total Default</label>
+                    <comment>Largo total por defecto</comment>
                 </field>
                 <field id="showErrorsFrontend" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Show Frontend Errors</label>

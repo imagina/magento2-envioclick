@@ -83,7 +83,10 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
         $originCode = $this->getConfigData('originCode');
         $originAddresse = $this->getConfigData('originAddresse');
         $apiKey = $this->getConfigData('apiKey');
-
+        $productWeight = $this->getConfigData('productWeight');
+        $weightTotalDefault = $this->getConfigData('weightTotalDefault');
+        $productDimensions = $this->getConfigData('productDimensions');
+       
         if($apiKey=="null" || empty($apiKey) || empty($originCode)){
             return false;
         }
@@ -98,7 +101,11 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
         // Get All Infor Car
         $inforCart = $this->getAllInforCart($request->getAllItems());
 
-        $totalWeight =  round($request->getPackageWeight(),2);
+        if($productWeight=="weightTotalProduct")
+            $totalWeight =  round($request->getPackageWeight(),2);
+        else
+            $totalWeight = round($weightTotalDefault,2);
+
         if($this->getWeightUnit()=="lbs")
             $totalWeight = round($totalWeight * 0.45,2);
             
@@ -106,14 +113,32 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
         /** @var \Magento\Shipping\Model\Rate\Result $result */
         $result = $this->rateResultFactory->create();
 
-        
         $package = array();
         $package["description"] = "Request to quotation";
         $package["contentValue"] = $inforCart['price'];
         $package["weight"] = $totalWeight;
-        $package["length"] = $inforCart['length'];
-        $package["height"] = $inforCart['height'];
-        $package["width"] = $inforCart['width'];
+
+        if($productDimensions=="dimensionsTotalProduct"){
+            $package["length"] = $inforCart['length'];
+            $package["height"] = $inforCart['height'];
+            $package["width"] = $inforCart['width'];
+        } else {
+
+            $tWidth = $this->getConfigData('widthTotalDefault');
+            $tHeight = $this->getConfigData('heightTotalDefault');
+            $tLength = $this->getConfigData('lengthTotalDefault');
+
+            if($this->getWeightUnit()=="lbs"){
+                $tWidth = $tWidth * 2.54;
+                $tHeight = $tHeight * 2.54;
+                $tLength = $tLength * 2.54;
+            } 
+
+            $package["length"] = $tLength;
+            $package["height"] = $tHeight;
+            $package["width"] = $tWidth;
+
+        }
 
         $formData = array();
         $formData["package"] = $package;
